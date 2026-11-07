@@ -1,1 +1,224 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Full-text case data extraction form</title><style>*{box-sizing:border-box}body{margin:0;background:#f9fbfa;color:#17313d;font:15px/1.65 system-ui,sans-serif}header{background:linear-gradient(120deg,#153645,#216458);color:white;padding:50px max(24px,calc((100vw - 1100px)/2))}h1{font-size:clamp(30px,4vw,44px)}header p{color:#d3e8e0}main{max-width:1180px;margin:auto;padding:35px 24px 80px}h2{margin:38px 0 16px;color:#1b554b}.scroller{overflow-x:auto;border:1px solid #dceae4;border-radius:12px;background:white}table{border-collapse:collapse;min-width:100%;width:max-content}th{background:#e7f2ec;text-align:left;color:#205d4d;font-size:13px}td,th{vertical-align:top;padding:16px;min-width:230px;max-width:420px;border-right:1px solid #e7efe9;overflow-wrap:anywhere}td em{font-style:italic;color:#395e5b;white-space:pre-wrap}.back{display:inline-block;background:white;color:#155d4f;text-decoration:none;border-radius:9px;padding:9px 16px;font-weight:700}.note{padding:16px 20px;border-left:4px solid #267d67;background:#ecf5f0;margin:25px 0}</style></head><body><header><a class="back" href="../index.html">← Back to prompt gallery</a><h1>Full-text case data extraction form</h1><p>Draft extraction headings, with one authentic extracted example in italics.</p></header><main><div class="note">Example publication: work-06e2595f7e438ea7. Values copied from archived extraction; “Not reported” marks missing values. Scroll tables horizontally.</div><h2>Case-level extraction</h2><div class='scroller'><table><thead><tr><th>Case Name</th><th>Case Description</th><th>Objectives</th><th>Actors</th><th>Collaboration Activities</th><th>Governance</th><th>Resources Incentives</th><th>Enablers</th><th>Barriers</th><th>Commodities</th><th>Supply Chain Stages</th><th>Countries</th><th>Locations</th><th>Additional Mechanisms</th><th>Author Conclusions</th></tr></thead><tbody><tr><td><em>Building a Tiny House from Waste</em></td><td><em>A collaborative tiny-house building project that used discarded and secondhand materials and opened construction activities to visitors, women, and non-binary people. The team gathered, organized, cleaned, modified, and used the materials while staging the building process at two exhibition sites.</em></td><td><em>Explore sustainability through a full-scale tiny-house project.; Challenge conventional house-building methods and explore ways to involve people and materials usually excluded from construction.</em></td><td><em>A project team of three women, including two design researchers and a professional carpenter.; Women and non-binary people invited to participate in building workshops, reflections, and discussions.; Visitors at the exhibition sites.; Companies and individuals who allowed the team to collect discarded materials.</em></td><td><em>The team sourced discarded and secondhand materials from websites, industries, private individuals, and a hardware store.; Team members and, at times, other people gathered, transported, stored, organized, cleaned, and adapted the materials.; The team invited women and non-binary people to workshops, reflections, and discussions, and shared practical knowledge about tools and materials.</em></td><td><em>The project was initiated and led by the team of three women; no further formal governance arrangement is reported.</em></td><td><em>The team collected discarded materials for free when permitted.; The paper acknowledges funding from several institutions and programmes, but does not describe a specific funding arrangement governing the project.</em></td><td><em>Discarded materials lowered the threshold for participation because participants could experiment with materials already classified as waste.; The project created opportunities for participants to learn and share practical skills.</em></td><td><em>Sourcing suitable materials took substantial time and involved contacting companies and individuals without established construction-sector connections.; Materials varied in quality, shape, and quantity, requiring adaptation and creating difficulties during construction.; Storage space was limited, materials were distributed across locations, and insect-related problems occurred.</em></td><td><em>Discarded and secondhand building materials; Wood and lumber</em></td><td><em>aggregation_storage; processing</em></td><td><em>country_name: Sweden; country_iso3: SWE</em></td><td><em>location_name: Västmanland County Museum; location_type: other; country_iso3: SWE; location_name: ReTuna; location_type: other; country_iso3: SWE</em></td><td><em>mechanism_id: C05.04; source_quote: The research process consisted of a series of activities, workshops, dialogues, and reflections; source_anchor: [SECTION 13]</em></td><td><em>conclusion: The authors report that their approach changed the organization and pace of building, the materials used, the skills required, and who participated and how.; source_quote: our approach changed the organization and pace of building, materials used, skills required, and who, when, and how people were involved in the project.; source_anchor: [SECTION 33]; conclusion: The authors report that gathering, cleaning, and adapting materials became essential activities, and that collaboration and participants’ time and energy were important to transforming waste into resources.; source_quote: Activities such as gathering, cleaning, and adapting are brought from low-status tasks to essential phases.; source_anchor: [SECTION 34]; conclusion: The authors report that the project involved people who were usually excluded from shaping the built environment and that participants adapted discarded materials.; source_quote: the tiny house formed a platform for involving persons who were usually not included in shaping our built environment and houses.; source_anchor: [SECTION 40]</em></td></tr></tbody></table></div></main></body></html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OSTARA · Full-text case data extraction schema</title><style>
+:root{--ink:#17313d;--muted:#5f7680;--green:#1a6658;--line:#deebe6}
+*{box-sizing:border-box}
+body{margin:0;background:#f9fbfa;color:var(--ink);font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:linear-gradient(120deg,#153645,#216458);color:white;padding:50px max(24px,calc((100vw - 1100px)/2))}
+header h1{font-size:clamp(30px,4vw,44px);line-height:1.15;margin:22px 0 9px}
+header p{max-width:870px;color:#d3e8e0}
+main{max-width:1240px;margin:auto;padding:35px 24px 80px}
+.back{display:inline-block;background:white;color:#155d4f;text-decoration:none;border-radius:9px;padding:9px 16px;font-weight:700}
+.back:hover{background:#e4f3ed}
+.intro{color:var(--muted);margin:0 0 23px}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 18px}
+input[type=search]{font:inherit;width:min(100%,520px);padding:11px 14px;border:1px solid #bacdc6;border-radius:9px;background:#fff}
+.counter{font-size:13px;color:var(--muted)}
+.scroller{overflow:auto;border:1px solid #dceae4;border-radius:12px;background:#fff;box-shadow:0 4px 18px #102e4008}
+table{border-collapse:collapse;table-layout:fixed;min-width:1100px;width:100%}
+th{background:#e7f2ec;text-align:left;color:#205d4d;font-size:13px;position:sticky;top:0;z-index:1}
+th,td{vertical-align:top;padding:14px 16px;border-bottom:1px solid #e7efe9;border-right:1px solid #edf1ed;overflow-wrap:anywhere;white-space:pre-wrap}
+th:last-child,td:last-child{border-right:0}
+th:nth-child(1),td:nth-child(1){width:25%;font-weight:680}
+th:nth-child(2),td:nth-child(2){width:36%}
+th:nth-child(3),td:nth-child(3){width:22%}
+th:nth-child(4),td:nth-child(4){width:12%}
+th:nth-child(5),td:nth-child(5){width:5%;min-width:95px}
+tbody tr:hover{background:#f5faf7}
+tbody tr[hidden]{display:none}
+.required{font-weight:700;color:#185d4b}.optional{color:#647878}
+.foot{font-size:12px;color:var(--muted);margin:20px 0 0}
+@media(max-width:650px){header{padding:30px 20px}main{padding:26px 14px 60px}input[type=search]{width:100%}}
+@media print{header{background:white;color:var(--ink);padding:18px}header p{color:var(--muted)}.back,.controls{display:none}.scroller{overflow:visible}th{position:static}table{min-width:0}th,td{font-size:10px;padding:6px}}
+</style></head>
+<body><header><a class="back" href="../index.html">← Back to prompt library</a>
+<h1>Full-text case data extraction schema</h1>
+<p>Case-analysis questions, definitions, topics of interest, answer forms and compulsory-response flags from the supplied CSV.</p></header>
+<main><p class="intro">Each row represents one extraction question. Columns have been reorganised to match the current five-column case-analysis specification; the former single-case example has been removed. Cells reproduce the CSV text without changing available response options or definitions.</p>
+<div class="controls"><input type="search" id="search" aria-label="Search the case extraction schema" placeholder="Search questions, definitions or topics…"><span class="counter" id="count">41 questions</span></div>
+<div class="scroller"><table id="schema"><thead><tr><th scope="col">Question</th><th scope="col">Definition</th><th scope="col">Topics of interest</th><th scope="col">Answer form</th><th scope="col">Response compulsory</th></tr></thead>
+<tbody><tr><td>Case name</td><td>The name of the case as given by the authors</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>What is the status? </td><td>The state of the case. Permissible values are: active, paused, completed, abandoned</td><td></td><td>Fixed, one option</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>Where did the case take place (location)?</td><td>The location of the case</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>Where did the case take place (country)?</td><td>The ISO-3 country name</td><td></td><td>Fixed, multiple options possible</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>Which commodity/commodities is the collective action addressing?</td><td>The commodity or commodities whose production system is targeted by the case/initiative</td><td></td><td>Fixed, multiple options possible</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>Coalition</td><td>The coalition that gave rise to and implements the collective action case, applicable only when there is a formally established coalition. This is not a comma-separated list of the actors coming together to deliver the collective action initiative, therefore if there is no formal coalition identified to initiate and implement this case, leave this field blank.</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Who are the contributing actors?</td><td>A comma-separated list of actors who contribute resources to the collective action initiative. Includes actors that contribute to and/or implement the initiative.</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>Who are the core implementing actors?</td><td>If evident, the subset of the actors who implement, convene, or orchestrate the collective action.</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>Who is the lead actor</td><td>If there is one clear organisation that led the case, provide the name.</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Case description</td><td>A description of what the collective action case does.</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>What is the level at which the collective action operates? </td><td>One of the following:
+-private sector, 
+-place- or landscape-based, 
+-national, 
+-inter-governmental or multinational,
+-systemic or other</td><td></td><td>Fixed, one option</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>What are the objectives/intentions of the collective action?</td><td>Summary of what the collective action actors state as the objectives of the initiative and what it intends to achieve.</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>What is/are the shared interest(s) that motivate actors to initiate, contribute to and/or implement the initiative as a collective?</td><td>One or more of the following: shared risks, shared costs, shared benefits, shared value creation. Definitions for each:
+-shared risk= actors are exposed to adverse outcome(s) anticipated with relative confidence, which is/are not avoidable by unilateral action
+-shared costs= actors incur expenditure(s) separately to satisfy the same requirement or generate the same information; 
+-shared benefits= actors gain resources, capabilities and/or datasets whose value is shared, with shared governance structures for it/them;
+-shared value creation= actors create value not presently existing which is contingent on joint action to bring into being (e.g. new markets, propositions or premia unavailable to actors individually)</td><td></td><td>Fixed, multiple options possible</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>How are progress and success measured by actors?</td><td>Evidence for how actors (those that initiate, contribute to and/or implement the initiative) measure the progress and success of the initiative. This can include how they measure the impact on the ground, but is not always the case. Some initiatives will not measure progress or success, in which case use &quot;N/A&quot;.</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>To what extent was/is the initiative successful in achieving its stated objectives, according to the actors? </td><td>Summary of the evidence of positive progress / success of the initiative as measured by the initiative actors, if described</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>To what extent did/does the initiative fail to achieve its stated objectives, according to the initiative architects?</td><td>Summary of the evidence of negative progress/ failure of the initiative as measured by the initiative actors, if described</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>To what extent did/does the initiative fail to achieve its stated objectives, according to any independent assessment? </td><td>Summary of most up to date evidence of negative progress/failure of the initiative as credited by independent assessors, if described</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>How is impact measured?</td><td>Evidence for how the impact on the ground from the initiative is measured. This can be a part of how initiative actors and/or independent assessors measure progress and/or success but is not always the case.</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>What were the positive environmental and social impacts of the initiative? </td><td>Summary of evidence on the environmental and social impacts on the ground as measured and/or credited by initiative actors and/or independent assessors</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>In what ways did the initiative strengthen the enabling conditions for collective action? </td><td>Summary of evidence on how the focal initiative made collective action initiatives in general more likely to form and/or succeed by strengthening the enabling conditions for this.</td><td></td><td>Free text</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Social success factors/enablers: goals</td><td>Summary of evidence on any SOCIAL factors that are stated to have enabled collective action initiation and/or implementation to deliver the original stated objectives/goals set out at establishment. This is not an assessment or measurement of success, but identification of enablers.
+social ≠ design success factors/barriers: social refers to the relational and normative dimension, not the institutional structures through which the initiative is organised (those belong as design success factors/barriers).</td><td>-quality of relationships among actors involved 
+-trust among actors involved 
+-legitimacy, 
+-social norms,
+-community ownership, 
+-inclusive participation 
+</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Social success factors/enablers: impact on the ground</td><td>Summary of evidence on any SOCIAL factors that are stated to have enabled collective action initiation and/or implementation to deliver impact on the ground. This is not an assessment or measurement of success, but identification of enablers.
+social ≠ design success factors/barriers: social refers to the relational and normative dimension, not the institutional structures through which the initiative is organised (those belong as design success factors/barriers).</td><td>-Improvded land tenure
+-Improved income and livelihoods
+-legitimacy, 
+-social norms,
+-community ownership, 
+-inclusive participation </td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Legal success factors/enablers: goals</td><td>Summary of evidence on any LEGAL factors that are stated to have enabled collective action initiation or implementation to deliver the original stated objectives/goals set out at establishment. This is not an assessment or measurement of success, but identification of enablers.
+Only cited where the legal structure is a direct enabling or constraining factor, not simply background context.</td><td>-existence, clarity, coherence, and enforceability of formal legal and regulatory frameworks
+- practical solutions to implement regulation
+-alignment with local, regional and/or national government agenda and/or plans</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Legal success factors/enablers: impact on the ground</td><td>Summary of evidence on any LEGAL factors that are stated to have enabled collective action initiation or implementation to deliver impact on the ground. This is not an assessment or measurement of success, but identification of enablers.
+Only cited where the legal structure is a direct enabling or constraining factor, not simply background context.</td><td>-existence, clarity, coherence, and enforceability of formal legal and regulatory frameworks
+- practical solutions to implement regulation
+-alignment with local, regional and/or national government agenda and/or plans</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Design success factors/enablers</td><td>Summary of evidence on any DESIGN factors that are stated to have enabled the initiation and structuring of the collective, and orchestration processes for collective action to deliver the original stated objectives/goals set out at establishment and/or deliver impact on the ground. This is not an assessment or measurement of success, but identification of enablers.
+design ≠ social success factors/barriers: design refers to institutional architecture and process orchestration, not the relational quality among participants (which belong as social success factors/barriers)</td><td>-actors&#x27; understanding of nature-related risks
+-motivation to contribute
+-shared level of governance (informal or fomal)
+-governance structure 
+-transparency
+-recognition systems
+-use of aligned approaches and methodologies
+-multi-stakeholder platform design
+-mechanisms of contribution 
+- transparency on progress
+- shared monitoring and reporting
+- assurance and accountability systems,
+-system of contribution or claims, 
+-decision-making mechanism, 
+-market share </td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Implementation success factors/enablers</td><td>Summary of evidence on factors that are stated to have enabled collective action IMPLEMENTATION, including the processes, structures, and authority by which the collective action was operationalised across multiple actors to deliver the original stated objectives/goals set out at establishment and/or impact on the ground. This is not an assessment or measurement of success, but identification of enablers.
+implementation ≠ social success factors/barriers: implementation refers to the implementation process in a coordinated way by multiple participants, not the relational quality among the participants (which belong as social success factors/barriers)</td><td>-convenors
+- long term objectives and commitment
+- shared and sustained resources for convening
+-orchestrators
+</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Environmental success factors/enablers</td><td>Summary of evidence on any ENVIRONMENTAL factors that are stated to have enabled collective action initiation or implementation to deliver impact on the ground. This is not an assessment or measurement of success, but identification of enablers. </td><td>- the status of natural ecosystems covered by the initiative, including those under protection  
+- the reduction in natural ecosystem conversion 
+- the total amount of degraded land being restored 
+- the presence of ecosystems and/or species of high conservation value and/or high conservation concern 
+- the ecological connectivity within the landscape
+- the area of commodity production that applies regenerative practices
+- the area of commodity production that is resilient to climatic and nature shocks
+-the geographic and climatic constraints on where the commodity can be grown
+-the landscape&#x27;s level of exposure to nature/climate hazards  </td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Economic success factors/enablers: goals</td><td>Summary of evidence on any ECONOMIC factors that are stated to have enabled collective action initiation or implementation to deliver the original stated objectives/goals set out at establishment. This is not an assessment or measurement of success, but identification of enablers.</td><td>-structure of incentives, 
+-burden of carrying the risk 
+-opportunity costs for producers, 
+-market access for producers,
+-premiums for producers,
+-profitability of land use decisions, 
+-financing conditions,
+-investment alignment.</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Economic success factors/enablers: impact on the ground</td><td>Summary of evidence on any ECONOMIC factors that are stated to have enabled collective action initiation or implementation for delivering impact on the ground. This is not an assessment or measurement of success, but identification of enablers.</td><td>-structure of incentives, 
+-land value,
+-opportunity costs for producers, 
+-market access for producers,
+-premiums for producers,
+-profitability of land use decisions, 
+-financing conditions,
+-investment alignment.</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Social barriers: goals</td><td>Summary of evidence on any SOCIAL barriers for collective action initiation and/or implementation to deliver the original stated objectives/goals set out at establishment. This is not an assessment or measurement of success, but identification of barriers.
+social ≠ design success factors/barriers: social refers to the relational and normative dimension, not the institutional structures through which the initiative is organised (those belong as design success factors/barriers).</td><td>-quality of relationships among actors involved 
+-trust among actors involved 
+-legitimacy, 
+-social norms,
+-community ownership, 
+-inclusive participation 
+</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Social barriers: impact on the ground</td><td>Summary of evidence on any SOCIAL barriers for collective action initiation and/or implementation to deliver impact on the ground. This is not an assessment or measurement of success, but identification of barriers.
+social ≠ design success factors/barriers: social refers to the relational and normative dimension, not the institutional structures through which the initiative is organised (those belong as design success factors/barriers).</td><td>-Improved land tenure
+-Improved income and livelihoods
+-legitimacy, 
+-social norms,
+-community ownership, 
+-inclusive participation </td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Legal barriers: goals</td><td>Summary of evidence on any LEGAL barriers for collective action initiation or implementation to deliver the original stated objectives/goals set out at establishment. This is not an assessment or measurement of success, but identification of barriers.
+Only cited where the legal structure is a direct enabling or constraining factor, not simply background context.</td><td>-existence, clarity, coherence, and enforceability of formal legal and regulatory frameworks
+- practical solutions to implement regulation
+-alignment with local, regional and/or national government agenda and/or plans</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Legal barriers: impact on the ground</td><td>Summary of evidence on any LEGAL barriers for collective action initiation or implementation to deliver impact on the ground. This is not an assessment or measurement of success, but identification of barriers.
+Only cited where the legal structure is a direct enabling or constraining factor, not simply background context.</td><td>-existence, clarity, coherence, and enforceability of formal legal and regulatory frameworks
+- practical solutions to implement regulation
+-alignment with local, regional and/or national government agenda and/or plans</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Design barriers</td><td>Summary of evidence on any DESIGN barriers for the initiation and structuring of the collective, and orchestration processes for collective action to deliver the original stated objectives / goals set out at establishment and/or deliver impact on the ground. This is not an assessment or measurement of success, but identification of barriers.
+design ≠ social success factors/barriers: design refers to institutional architecture and process orchestration, not the relational quality among participants (which belong as social success factors/barriers)</td><td>-actors&#x27; understanding of nature-related risks
+-motivation to contribute
+-transparency
+-shared level of governance (informal or fomal) 
+-governance structure
+-use of aligned approaches and methodologies
+-multi-stakeholder platform design
+-mechanisms of contribution 
+- transparency on progress
+- shared monitoring and reporting
+-recognition systems
+- assurance and accountability systems,
+-system of contribution or claims, 
+-decision-making mechanism, 
+-market share </td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Implementation barriers</td><td>Summary of evidence on any barriers for collective action IMPLEMENTATION, including the processes, structures, and authority by which the collective action was operationalised across multiple actors to deliver the original stated objectives / goals set out at establishment and/or impact on the ground. This is not an assessment or measurement of success, but identification of barriers.
+implementation ≠ social success factors/barriers: implementation refers to the implementation process in a coordinated way by multiple participants, not the relational quality among the participants (which belong as social success factors/barriers)</td><td>-convenors
+- long term objectives and commitmentc
+- shared and sustained resources for convening
+-orchestrators</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Environmental barriers</td><td>Summary of evidence on any ENVIRONMENTAL barriers for collective action initiation or implementation to deliver impact on the ground. This is not an assessment or measurement of success, but identification of barriers.</td><td>- the status of natural ecosystems covered by the initiative, including those under protection  
+- the reduction in natural ecosystem conversion 
+- the total amount of degraded land being restored 
+- the presence of ecosystems and/or species of high conservation value and/or high conservation concern 
+- the ecological connectivity within the landscape
+- the area of commodity production that applies regenerative practices
+- the area of commodity production that is resilient to climatic and nature shocks
+-the geographic and climatic constraints on where the commodity can be grown
+-the landscape&#x27;s level of exposure to nature/climate hazards  </td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Economic barriers: goals</td><td>Summary of evidence on any ECONOMIC barriers for collective action initiation or implementation to deliver the original stated objectives / goals set out at establishment. This is not an assessment or measurement of success, but identification of barriers.</td><td>-structure of incentives, 
+-burden of carrying the risk 
+-opportunity costs for producers, 
+-market access for producers,
+-premiums for producers,
+-profitability of land use decisions, 
+-financing conditions,
+-investment alignment.</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Economic barriers: impact on the ground</td><td>Summary of evidence on any ECONOMIC barriers for collective action initiation or implementation for delivering impact on the ground. This is not an assessment or measurement of success, but identification of barriers.</td><td>-structure of incentives, 
+-land value,
+-opportunity costs for producers, 
+-market access for producers,
+-premiums for producers,
+-profitability of land use decisions, 
+-financing conditions,
+-investment alignment.</td><td>Free text, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Supply chain stages</td><td>Stage or list of stages across which the collective action initiatives acts from:
+-production
+-aggregation
+-processing
+-transport
+-wholesale
+-retail</td><td></td><td>Fixed, multiple options possible</td><td><span class="optional">FALSE</span></td></tr>
+<tr><td>Was any funder formally connected with the actors of the case?</td><td>From the information on funding, list any organisation that was included as an actor in the case</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr>
+<tr><td>Was any author of the publisher formally connected with the actors of the case?</td><td>Of the list of article authors, list any author evidently affiliated with the actors identified from the case</td><td></td><td>Free text</td><td><span class="required">TRUE</span></td></tr></tbody></table></div>
+<p class="foot">Source: supplied Case data schema – Case analysis instructions CSV. “TRUE” and “FALSE” are reproduced verbatim from the Response_compulsory column. Empty Topics of interest cells remain empty.</p></main>
+<script>(function(){
+const input=document.getElementById('search');
+const count=document.getElementById('count');
+const rows=[...document.querySelectorAll('#schema tbody tr')];
+function update(){let shown=0;const query=input.value.trim().toLocaleLowerCase();for(const row of rows){const visible=!query||row.textContent.toLocaleLowerCase().includes(query);row.hidden=!visible;if(visible)shown++;}count.textContent=shown+' of '+rows.length+' questions';}
+input.addEventListener('input',update);update();
+})();</script></body></html>
