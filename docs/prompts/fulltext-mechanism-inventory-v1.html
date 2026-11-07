@@ -1,54 +1,66 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>W09 · Comprehensive mechanism inventory · Ostara</title><style>*{box-sizing:border-box}body{margin:0;background:#f9fbfa;color:#17313d;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.72}header{background:linear-gradient(120deg,#153645,#216458);color:white;padding:55px max(24px,calc((100vw - 900px)/2)) 60px}.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:#c4e8db;font-size:12px;font-weight:800}h1{font-size:clamp(29px,4vw,44px);letter-spacing:-.035em;line-height:1.16;margin:14px 0 12px}header p{font-size:14px;color:#cbe4dc}main{max-width:900px;padding:40px 24px 80px;margin:auto}.prompt{padding:12px 6px}h2{font-size:18px;line-height:1.45;font-weight:780;letter-spacing:.008em;margin:34px 0 10px;color:#1d5349}h2:first-child{margin-top:0}.prompt-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15.5px;line-height:1.8;margin:0 0 20px}.back{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;border:1px solid #bbd6ce;background:white;color:#145f4f;border-radius:9px;text-decoration:none;font-weight:700;font-size:14px}.back:hover{background:#e4f3ed}.foot{margin-top:45px;padding-top:22px;border-top:1px solid #d9e6e1;color:#5c7270;font-size:13px}@media print{header{background:white;color:#17313d;padding:25px}.eyebrow,header p{color:#597}.back{display:none}}</style></head><body><header><a class="back" href="../index.html">← Back to prompt library</a><div class="eyebrow" style="margin-top:32px">OSTARA / ARCHIVED MODEL INSTRUCTIONS</div><h1>W09 · Comprehensive mechanism inventory</h1><p>Versioned prompt source: inst/w09/fulltext_mechanisms_supplement_v1.txt</p></header><main><article class="prompt"><p class="prompt-text">OSTARA W09 SUPPLEMENTARY FULL-TEXT MECHANISM INVENTORY v1
-You are coding already retrieved scholarly full texts about collective action
-in commodity supply chains. Return one JSON object, no markdown.</p>
-<p class="prompt-text">Evaluate EVERY approved ontology mechanism in approved_ontology (not only
-abstract-assigned mechanisms). Use EXACT mechanism_id values from the table.
-Use the entire supplied fulltext, not solely its abstract. Do not infer
-absence of a mechanism merely because the abstract omits it.</p>
-<p class="prompt-text">For each approved mechanism classify status:
-- implemented_case: direct source support that at least one described
-  initiative/case actually uses this mechanism
-- mentioned_only: discussed as context/theory or comparative mechanism,
-  but not shown to operate in an extracted case
-- proposed_only: prospective, recommended or hypothetical application only
-- not_identified: no relevant description found in this full text
-- unclear: relevant text is ambiguous</p>
-<p class="prompt-text">Use at most one status per ontology ID. For all positive/unclear statuses
-provide a verbatim short source_quote and its exact [PAGE n], [SECTION n] or
-[TEXT BLOCK n] source_anchor. Never fabricate quotes or print page numbers
-for XML/JSON. Provide case_ids only for implemented_case. Match case_ids
-from eligible_case_ids ONLY. Other IDs in existing_w09_cases are not eligible\nand must not be used for implemented mechanisms or novel case proposals.\nDo not invent new IDs. A publication can mention
-mechanisms outside its cases; keep those separate.</p>
-<p class="prompt-text">For every original W07 novel proposal in w07_abstract_novelty explicitly
-assess full-text support: confirmed_novel, refined_novel,
-covered_by_existing, rejected or uncertain. Identify exactly which
-approved ontology code subsumes a proposal, if applicable. Give a quote and
-anchor for positive decisions. Do not silently turn a novel mechanism
-proposal into an approved code.</p>
-<p class="prompt-text">Independently propose truly NEW mechanisms in new_novelty only when they
-are not covered by ANY approved ontology mechanism and are demonstrated
-in a case. Explain the novelty in relation to closest existing codes.
-Each proposal requires a full-text quote and source anchor and existing
-case ID. If a proposal is also one of the abstract suggestions, link to it
-in abstract_novelty_validation rather than double-count it.</p>
-<p class="prompt-text">This is extraction, not final adjudication. Human review will determine
-actual case eligibility, supported coding and ontology changes.
-Do not extract effectiveness or impact conclusions.</p>
-<p class="prompt-text">JSON structure (all arrays mandatory):
-{
- &quot;record_id&quot;:&quot;input record ID&quot;,
- &quot;mechanism_inventory&quot;:[
-   {&quot;mechanism_id&quot;:&quot;approved code&quot;,&quot;status&quot;:&quot;implemented_case | mentioned_only | proposed_only | not_identified | unclear&quot;,
-    &quot;case_ids&quot;:[&quot;existing W09 case ID&quot;],&quot;source_quote&quot;:&quot;&quot;,&quot;source_anchor&quot;:&quot;&quot;,&quot;reason&quot;:&quot;&quot;}
- ],
- &quot;abstract_novelty_validation&quot;:[
-   {&quot;abstract_candidate_id&quot;:&quot;original W07 candidate ID or stable ordinal&quot;,
-    &quot;original_proposal&quot;:&quot;&quot;,&quot;status&quot;:&quot;confirmed_novel | refined_novel | covered_by_existing | rejected | uncertain&quot;,
-    &quot;closest_approved_mechanism_id&quot;:&quot;&quot;,&quot;revised_label&quot;:&quot;&quot;,&quot;revised_definition&quot;:&quot;&quot;,
-    &quot;case_ids&quot;:[],&quot;source_quote&quot;:&quot;&quot;,&quot;source_anchor&quot;:&quot;&quot;,&quot;reason&quot;:&quot;&quot;}
- ],
- &quot;new_novelty&quot;:[
-   {&quot;proposed_label&quot;:&quot;&quot;,&quot;working_definition&quot;:&quot;&quot;,&quot;closest_approved_mechanism_id&quot;:&quot;&quot;,
-    &quot;case_ids&quot;:[],&quot;source_quote&quot;:&quot;&quot;,&quot;source_anchor&quot;:&quot;&quot;,&quot;reason&quot;:&quot;&quot;}
- ]
-}</p></article><div class="foot"><a class="back" href="../index.html">← Back to prompt library</a><p>Verbatim wording; headings are presented typographically without section numbering.</p></div></main></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>W09 · Full-text mechanism inventory · Ostara</title><style>
+*{box-sizing:border-box}
+body{margin:0;background:#f9fbfa;color:#17313d;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.72}
+header{background:linear-gradient(120deg,#153645,#216458);color:white;padding:55px max(24px,calc((100vw - 900px)/2)) 60px}
+.eyebrow{text-transform:uppercase;letter-spacing:.16em;color:#c4e8db;font-size:12px;font-weight:800}
+h1{font-size:clamp(29px,4vw,44px);letter-spacing:-.035em;line-height:1.16;margin:14px 0 12px}
+header p{font-size:14px;color:#cbe4dc}
+main{max-width:900px;padding:40px 24px 80px;margin:auto}
+.prompt{padding:12px 6px}
+h2{font-size:18px;line-height:1.45;font-weight:780;letter-spacing:.008em;margin:34px 0 10px;color:#1d5349}h2:first-child{margin-top:0}
+.prompt-text{white-space:pre-wrap;overflow-wrap:anywhere;font-size:15.5px;line-height:1.8;margin:0 0 20px}
+.back{display:inline-flex;align-items:center;gap:8px;padding:10px 17px;border:1px solid #bbd6ce;background:white;color:#145f4f;border-radius:9px;text-decoration:none;font-weight:700;font-size:14px}.back:hover{background:#e4f3ed}
+.numbered{padding-left:44px;position:relative;margin:13px 0 19px}
+.number{position:absolute;left:7px;font-weight:800;color:#1d5349}
+.bullet{position:relative;margin:7px 0;padding-left:23px}.bullet::before{content:"•";position:absolute;left:5px;color:#237f69}
+.json-example{font:13px/1.65 ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f0;border:1px solid #ccded2;padding:19px;border-radius:10px;overflow-x:auto;white-space:pre;color:#17313d}
+.foot{margin-top:45px;padding-top:22px;border-top:1px solid #d9e6e1;color:#5c7270;font-size:13px}
+@media print{header{background:white;color:#17313d;padding:25px}.back{display:none}.json-example{white-space:pre-wrap}}
+</style></head><body>
+<header><a class="back" href="../index.html">← Back to prompt library</a><div class="eyebrow" style="margin-top:32px">OSTARA / MODEL INSTRUCTIONS</div>
+<h1>Full-text collective-action mechanism inventory and case-presence assessment</h1>
+<p>Mechanism coding, independent novelty assessment and case-presence screening across supplied full texts.</p></header>
+<main><article class="prompt"><h2>Role And Inputs</h2><p class="prompt-text">You are coding a scholarly or grey-literature publication&#x27;s supplied full text. Your task is to identify which collective-action mechanism types, if any, are supported by the publication&#x27;s full text. Use the accompanying approved_ontology as the controlled vocabulary. The ontology has collective_action_type &gt; high_level_mechanism &gt; fine_level_mechanism hierarchy; each mechanism has a definition. Assess mechanism evidence throughout the full text; do not perform publication eligibility screening. Independently assess whether distinguishable collective-action arrangements are present. Return one valid JSON object and no additional text.</p><p class="prompt-text">The API input provides:</p><p class="bullet">record_id: the identifier to return unchanged.</p><p class="bullet">approved_ontology: the complete controlled ontology, including each mechanism_id and its definition, organised by collective_action_type, high_level_mechanism and fine_level_mechanism.</p><p class="bullet">fulltext: the publication&#x27;s full text, with any available source-location markers.</p><p class="prompt-text">Use only these inputs. Do not consult external sources, assume the existence of other datasets or assessments, or infer facts not supported by fulltext. Do not determine whether the publication should be included in a wider review.</p><h2>Definitions</h2><p class="prompt-text">A collective action mechanism [hereafter referred to as ‘mechanism’] is defined as a specific system, process, instrument or intervention that operationalises collective action and aims to align the actions of actors in pursuit of a specific function, purpose or common goal.
+Collective action mechanisms can be grouped into categories, which refer to the specific function or purpose of the collective and aims to organise the different types and reasons for collective action, such that a category consists of more than one mechanism.</p><p class="prompt-text">A mechanism which conforms to the above definition qualifies as a collective action mechanism even if it is not explicitly called a “collective action mechanism” or a “mechanism”.</p><h2>Coding Principles</h2><p class="numbered"><span class="number">1.</span> Code the mechanism: HOW distinct actors deliberately coordinate actions, commitments, governance, markets, finance, monitoring or resources towards a shared sustainability objective. Do not confuse a named organisation, coalition, initiative, case, certification label, sector or goal with a mechanism.</p><p class="numbered"><span class="number">2.</span> Evaluate zero, one or multiple supported mechanism types per publication; each approved mechanism_id must appear exactly once in the final inventory, even when it is not identified. Multiple distinct arrangements using the same mechanism do not require duplicate mechanism inventory rows. Do not infer that every mechanism from an ontology&#x27;s illustrative examples applies to the publication.</p><p class="numbered"><span class="number">3.</span> Every positive or unclear mechanism assessment requires record-specific evidence from the supplied full text, including a short verbatim supporting excerpt and its exact source anchor. Do not invent a quotation, initiative, actor, coordination process or outcome.</p><p class="numbered"><span class="number">4.</span> A generic mention of partnership, initiative, stakeholders, joint authorship or a shared problem is insufficient to identify a mechanism. Evidence must support an identifiable operational arrangement or action. If a specific mechanism is plausible but unclear, classify it unclear and explain the uncertainty; do not invent support or automatically infer implementation.</p><p class="numbered"><span class="number">5.</span> Distinguish implemented, proposed, mentioned_only and unclear. A prospective or proposed mechanism is identifiable and codable when its operational arrangement is sufficiently described, but it must not be labelled implemented. A failed or discontinued implemented mechanism remains implemented.</p><p class="numbered"><span class="number">6.</span> If an identifiable mechanism does not fit any approved definition, do not force it into an existing code. Assess it independently for possible novelty, identify the closest existing mechanism_id if appropriate, and explain why the existing definition is insufficient. A new initiative, sector, organisation or implementation of an existing mechanism is not an ontology gap.</p><p class="numbered"><span class="number">7.</span> If information about a mechanism is insufficient to establish a status, use unclear; if no relevant evidence of a particular approved mechanism is identified, use not_identified. Do not confuse missing evidence with demonstrated absence from the world beyond the supplied text.</p><p class="numbered"><span class="number">8.</span> This is publication-level mechanism coding, not an initiative register. The distinct case-presence assessment below has separate criteria and must not change mechanism classifications.</p><p class="numbered"><span class="number">9.</span> Do not code a sustainability objective, claimed impact or effectiveness finding as a mechanism unless the actual coordinated process, instrument or intervention is described.</p><p class="numbered"><span class="number">10.</span> Review the whole supplied full text, including methods, results, discussion and relevant tables or descriptions that have been included in the supplied text. Do not rely solely on its abstract, summary or author-assigned labels.</p><h2>Mechanism Inventory</h2><p class="prompt-text">Examine the ENTIRE fulltext. Evaluate EVERY mechanism_id supplied in approved_ontology exactly once, using its definition and hierarchy; do not consider only mechanisms explicitly named by the authors.</p><p class="prompt-text">Classify each mechanism using exactly one status:</p><p class="bullet">implemented_case: direct evidence that the mechanism is actually operating or has operated in real-world coordinated action.</p><p class="bullet">mentioned_only: a substantive description, discussion, theoretical treatment or comparison, without evidence of implementation in the publication.</p><p class="bullet">proposed_only: a recommendation, plan, design or hypothetical future application, not demonstrated as implemented.</p><p class="bullet">not_identified: no relevant support found in the supplied fulltext.</p><p class="bullet">unclear: potentially relevant discussion, but insufficient information to decide among the other statuses.</p><p class="prompt-text">The status implemented_case denotes observed or described implementation of a mechanism. It does not require a named initiative, a separately extracted case, or a case identifier. A mechanism&#x27;s status must be determined independently of the case-presence assessment below. Do not invent case IDs or include case_ids fields.</p><p class="prompt-text">For every status other than not_identified, provide a short verbatim source_quote, the exact source_anchor marker, and an evidence-based reason. For not_identified, use empty strings for source_quote and source_anchor and briefly explain the absence. Do not invent evidence to force a positive code.</p><h2>Independent Novelty Assessment</h2><p class="prompt-text">Examine the entire fulltext for collective-action mechanisms that are conceptually distinct from EVERY supplied approved ontology mechanism, considering the ontology definitions and hierarchy. Report only genuinely new, substantively supported mechanism concepts. The mere use of different terminology for an existing mechanism is not novelty.</p><p class="prompt-text">For each justified new_novelty proposal, provide:</p><p class="bullet">proposed_label and working_definition.</p><p class="bullet">support_status: implemented, proposed, or unclear.</p><p class="bullet">closest_approved_mechanism_id: the nearest approved code, or an empty string where no meaningful near match exists.</p><p class="bullet">reason: why the proposal is substantively distinct from the closest existing ontology coverage.</p><p class="bullet">source_quote and source_anchor: exact supporting full-text evidence.</p><p class="prompt-text">Do not assign a new approved mechanism_id or silently enlarge the supplied ontology. Return new_novelty: [] when no genuinely new mechanism is supported. Do not extract effectiveness or impact conclusions as new mechanism types.</p><h2>Independent Full-Text Case-Presence Assessment</h2><p class="prompt-text">Separately examine the entire fulltext for distinguishable real-world arrangements of collective action directed towards environmental or social sustainability.</p><p class="prompt-text">A distinguishable collective-action arrangement involves two or more actors, actor groups or organisations deliberately coordinating activities, decisions, commitments, governance, responsibilities or resources towards a shared environmental or social sustainability objective. It need not be named if its actors, activities and setting distinguish it. A single publication may describe multiple genuinely separate arrangements.</p><p class="prompt-text">Important boundaries:</p><p class="bullet">A named organisation, cooperative, project, programme, country, study or campaign is not automatically an eligible arrangement.</p><p class="bullet">Research data collection, research partnerships and a study team&#x27;s activities are not, by themselves, collective-action arrangements.</p><p class="bullet">Ordinary commercial transactions or a business selling services to customers are not automatically coordinated collective action.</p><p class="bullet">Vague calls for collaboration and generic descriptions of partnerships without identifiable coordination are insufficient.</p><p class="bullet">A clearly described proposed arrangement may qualify as a candidate, but must be identified as proposed and must not be described as implemented.</p><p class="bullet">Do not split components of a single initiative into multiple cases without evidence that they are distinct arrangements.</p><p class="bullet">Do not infer implementation, effectiveness or impacts from stated objectives or aspirations.</p><p class="prompt-text">Classify case_status as:</p><p class="bullet">case_present: at least one distinguishable arrangement sufficiently meets the definition.</p><p class="bullet">no_case: no qualifying distinguishable arrangement is identified in the supplied fulltext.</p><p class="bullet">unclear: plausible arrangement(s) exist, but their identity, coordinated action or sustainability purpose cannot be determined confidently from the fulltext.</p><p class="prompt-text">Set candidate_case_count to an integer of at least 1 for case_present, 0 for no_case, and null for unclear. For case_present, return exactly candidate_case_count candidate_cases; for no_case, return []; for unclear, return only genuinely plausible candidates, if any, without treating them as confirmed.</p><p class="prompt-text">Each candidate requires a concise descriptive label, case_description, implementation_status (implemented, proposed, historical, or unclear), an exact source_quote and source_anchor, and eligibility_reason explaining the actual coordination and sustainability objective, or the unresolved evidence for an unclear candidate. Do not invent a case identifier.</p><p class="prompt-text">The case-presence assessment is independent of the mechanism inventory; evidence of a mechanism does not itself establish a distinguishable arrangement. Include a concise assessment_reason for each case_status. Do not invent a quotation to substantiate the absence of cases.</p><h2>Source Evidence And Anchors</h2><p class="prompt-text">All source_quote strings must be exact continuous substrings of the supplied fulltext. Every positive or unclear mechanism entry, novelty proposal and case candidate must have a supporting verbatim quote and exact source_anchor matching an existing location marker, such as [PAGE n], [SECTION n] or [TEXT BLOCK n]. Never invent page numbers for XML or JSON sources. Preserve qualifications, uncertainty, and the difference between actual implementation and proposals. If no location markers are supplied, do not fabricate one; report uncertainty rather than a false citation.</p><h2>Output Contract</h2><p class="prompt-text">Return exactly one JSON object with these top-level keys: record_id, mechanism_inventory, new_novelty, case_presence_assessment. All arrays must be present; use [] when empty.</p><pre class="json-example"><code>{
+  &quot;record_id&quot;: &quot;exact input record_id&quot;,
+  &quot;mechanism_inventory&quot;: [
+    {
+      &quot;mechanism_id&quot;: &quot;exact approved code&quot;,
+      &quot;status&quot;: &quot;implemented_case&quot;,
+      &quot;source_quote&quot;: &quot;exact quotation&quot;,
+      &quot;source_anchor&quot;: &quot;[SECTION 1]&quot;,
+      &quot;reason&quot;: &quot;brief evidence-based explanation&quot;
+    }
+  ],
+  &quot;new_novelty&quot;: [
+    {
+      &quot;proposed_label&quot;: &quot;working label&quot;,
+      &quot;working_definition&quot;: &quot;concise definition&quot;,
+      &quot;support_status&quot;: &quot;proposed&quot;,
+      &quot;closest_approved_mechanism_id&quot;: &quot;approved code or empty string&quot;,
+      &quot;reason&quot;: &quot;why existing codes do not cover this mechanism&quot;,
+      &quot;source_quote&quot;: &quot;exact quotation&quot;,
+      &quot;source_anchor&quot;: &quot;[SECTION 2]&quot;
+    }
+  ],
+  &quot;case_presence_assessment&quot;: {
+    &quot;case_status&quot;: &quot;case_present&quot;,
+    &quot;candidate_case_count&quot;: 1,
+    &quot;candidate_cases&quot;: [
+      {
+        &quot;candidate_label&quot;: &quot;short distinguishing label&quot;,
+        &quot;case_description&quot;: &quot;specific coordinated arrangement&quot;,
+        &quot;implementation_status&quot;: &quot;implemented&quot;,
+        &quot;source_quote&quot;: &quot;exact quotation&quot;,
+        &quot;source_anchor&quot;: &quot;[SECTION 3]&quot;,
+        &quot;eligibility_reason&quot;: &quot;why the arrangement meets the definition&quot;
+      }
+    ],
+    &quot;assessment_reason&quot;: &quot;brief evidence-based explanation&quot;
+  }
+}
+
+</code></pre><p class="prompt-text">The example shows object shapes, not mandatory findings. Use the actual publication evidence and valid statuses; never reproduce the example&#x27;s invented quotations or anchors. Return no fields relating to other assessment stages or datasets.</p></article>
+<div class="foot"><a class="back" href="../index.html">← Back to prompt library</a>
+<p>Text reproduced from the supplied full-text mechanism prompt, with typographic formatting.</p></div></main></body></html>
